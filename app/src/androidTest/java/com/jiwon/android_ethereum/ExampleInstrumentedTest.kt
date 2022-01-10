@@ -1,4 +1,4 @@
-package com.jiwon.myapplication
+package com.jiwon.android_ethereum
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

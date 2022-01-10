@@ -1,4 +1,4 @@
-package com.jiwon.myapplication
+package com.jiwon.android_ethereum
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

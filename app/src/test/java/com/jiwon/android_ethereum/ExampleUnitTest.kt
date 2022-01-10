@@ -1,4 +1,4 @@
-package com.jiwon.myapplication
+package com.jiwon.android_ethereum
 
 import org.junit.Test
 
