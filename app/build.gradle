@@ -1,4 +1,5 @@
 import com.dependency.Ethereum
+import com.dependency.Web3J
 
 plugins {
     id 'com.android.application'
@@ -31,6 +32,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -44,4 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation Ethereum.Api
+
+    implementation Web3J.Api
 }
