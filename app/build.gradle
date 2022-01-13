@@ -16,6 +16,10 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "InfuraToken", INFURA_TOKEN
+        buildConfigField "String", "WalletPassword", WALLET_PASSWORD
+        buildConfigField "String", "WalletDir", WALLET_PASSWORD
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

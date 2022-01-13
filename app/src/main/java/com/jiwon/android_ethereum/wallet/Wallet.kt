@@ -3,25 +3,29 @@ package com.jiwon.android_ethereum.wallet
 import org.web3j.crypto.WalletUtils
 import java.io.File
 import android.util.Log
+import com.jiwon.android_ethereum.BuildConfig
+import org.bouncycastle.jce.provider.BouncyCastleProvider
 import org.web3j.crypto.Credentials
 import org.web3j.protocol.Web3j
 import org.web3j.protocol.core.methods.response.TransactionReceipt
 import org.web3j.tx.Transfer
 import java.math.BigDecimal
 import org.web3j.utils.Convert
+import java.security.Provider
+import java.security.Security
 
 class Wallet(
     val service : Web3j
 ) {
-    var walletDir = File(WalletPath)
-    val walletName = WalletUtils.generateLightNewWalletFile(password, walletDir).apply{
-        walletDir = File(WalletPath, this)
+    var walletDir = File("")
+    val walletName = WalletUtils.generateLightNewWalletFile(password, "").apply{
+        walletDir = File("", this)
     }
     var credential : Credentials? = null
 
     internal fun load(){
         try{
-            credential = WalletUtils.loadCredentials(password, walletDir)
+            credential = WalletUtils.loadCredentials(password, "")
             Log.i("Wallet", "Wallet address is ${credential?.address}")
         }catch(e: Exception){
             Log.e("Wallet", "error found in ${e.localizedMessage}")
@@ -55,8 +59,7 @@ class Wallet(
     }
 
     companion object{
-        const val password = ""
-        const val WalletPath = ""
+        const val password = BuildConfig.WalletPassword
 
     }
 }
